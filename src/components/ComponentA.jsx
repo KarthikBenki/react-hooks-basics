@@ -1,8 +1,11 @@
 import React from 'react'
+import ComponentD from './ComponentD'
 
 const ComponentA = () => {
   return (
-    <div>ComponentA</div>
+    <React.Fragment>
+        <ComponentD/>
+    </React.Fragment>
   )
 }
 

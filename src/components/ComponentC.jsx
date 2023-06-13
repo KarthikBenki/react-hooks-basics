@@ -1,8 +1,11 @@
 import React from 'react'
+import ComponentG from './ComponentG'
 
 const ComponentC = () => {
   return (
-    <div>ComponentC</div>
+    <React.Fragment>
+        <ComponentG/>
+    </React.Fragment>
   )
 }
 
