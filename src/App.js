@@ -12,12 +12,15 @@ const counterReducer = (state, action) => {
     case "decrement":
       return state - 1;
 
+    case "reset":
+      return state-state;
+
     default:
       return state;
   }
 };
 
-const CounterContext = createContext(); //will create a context
+export const CounterContext = createContext(); //will create a context
 
 function App() {
   const [state, dispatch] = useReducer(counterReducer, initialState); //Use Reducer Will take reducer function and initialState
