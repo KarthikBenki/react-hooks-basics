@@ -3,17 +3,28 @@ import "./App.css";
 import ComponentA from "./components/ComponentA";
 import ComponentB from "./components/ComponentB";
 import ComponentC from "./components/ComponentC";
-let initialState = 0;
+let initialState = {
+  count: 0,
+};
 const counterReducer = (state, action) => {
   switch (action.type) {
     case "increment":
-      return state + 1;
+      return {
+        ...state,
+        count: state.count + 1,
+      };
 
     case "decrement":
-      return state - 1;
+      return {
+        ...state,
+        count: state.count - 1,
+      };
 
     case "reset":
-      return state-state;
+      return {
+        ...state,
+        count: 0,
+      };
 
     default:
       return state;
@@ -27,7 +38,7 @@ function App() {
   return (
     <CounterContext.Provider value={{ state, dispatch }}>
       <div className="App">
-        <h1>{state}</h1>
+        <h1>{state.count}</h1>
         <ComponentA />
         <ComponentB />
         <ComponentC />
